@@ -1,3 +1,4 @@
+import { CoffeeCard } from "../../components/CoffeeCard";
 import { ICoffe, TagCoffee } from "../../interfaces/ICoffee";
 import { Intro } from "./components/Intro";
 import { HomeContainer } from "./styles";
@@ -8,8 +9,8 @@ const coffees : ICoffe[] = [
         name: 'Expresso Tradicional',
         description: 'O tradicional café feito com água quente e grãos moídos',
         tags: [ TagCoffee.Tradicional ],
-        amount: 1,
-        imgSource: ''
+        amount: 9.90,
+        imgSource: 'expresso-tradicional.png'
     }
 ]
 
@@ -22,7 +23,7 @@ export function Home() {
             <div>
                 {coffees.map(coffe => {
                     return (
-                        <div key={coffe.id}> {coffe.name} </div>
+                        <CoffeeCard coffe={coffe} />
                     )
                 })}
             </div>
